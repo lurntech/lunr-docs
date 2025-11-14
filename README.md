@@ -1,39 +1,48 @@
-# 📘 Opensource Brax.tech documentation
+# Lunr Documentation
 
-Built with [Zensical](https://zensical.org) - a modern static site generator by the creators of Material for MkDocs.
+This is a documentation site built with [Zensical](https://zensical.org) - a modern static site generator by the creators of Material for MkDocs.
 
-## 🚀 Getting Started
+## 🚀 Setup
 
-### 1. Create a virtual environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-```
-
-### 2. Install dependencies
-
-```bash
+### Windows (PowerShell)
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Run the local dev server
-
+### Unix/Linux/Mac
 ```bash
-zensical serve
+bash setup.sh
 ```
 
-Then open <http://localhost:8000>
+## Development
 
-### 4. Build the static site
+Serve the documentation locally:
+```bash
+zensical serve -f zensical.toml
+```
 
+Access at http://localhost:8000
+
+## Build
+
+Build the static site:
 ```bash
 zensical build
 ```
 
-## 🔄 Compatibility Note
+## Deploy
 
-Zensical is fully compatible with Material for MkDocs configurations. Your existing `mkdocs.yml` works seamlessly with Zensical, providing:
+Deploy to GitHub Pages:
+```bash
+zensical gh-deploy
+```
+
+## About Zensical
+
+Zensical is fully compatible with Material for MkDocs configurations, providing:
 
 - ⚡ **Faster builds** - Built with Rust for performance
 - 🎨 **Modern design** - Clean, professional interface
