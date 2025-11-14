@@ -4,16 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-This is the **BRAX Technologies open source documentation site** built with **MkDocs Material**. The documentation covers:
-- **Device documentation** for BRAX hardware (primarily BraX3 smartphone)
-- **Operating system guides** (AOSP, BraxOS, LineageOS, Ubuntu Touch, iodéOS, etc.)
-- **Repair guides** (screen, battery, charging port, buttons)
-- **Company governance** (code of conduct, management model, organizational structure)
-- **Manifesto** and community resources
-
-The site is deployed to **two environments**:
-- `https://opensource.braxtech.net` (production - `main` branch)
-- `https://opensource-dev.braxtech.net` (development - `dev` branch)
+This is the **Lunr documentation site** built with **Zensical** (Material for MkDocs).
 
 ## Common Commands
 
@@ -42,7 +33,7 @@ Or use the provided setup script (Unix-like systems only):
 
 Start the local development server with live reload:
 ```bash
-mkdocs serve
+zensical serve -f zensical.toml
 ```
 - Access at `http://localhost:8000`
 - Hot reloading enabled - changes to docs automatically refresh
@@ -52,10 +43,10 @@ mkdocs serve
 
 Build the static site for production:
 ```bash
-mkdocs build
+zensical build
 ```
 - Output directory: `site/`
-- Use `mkdocs build --clean` to remove stale files before building
+- Use `zensical build --clean` to remove stale files before building
 
 ### Validation
 
@@ -70,7 +61,7 @@ linkchecker http://localhost:8000
 ### Project Structure
 
 ```
-brax-docs/
+lunr-doc/
 ├── docs/                              # All documentation content
 │   ├── index.md                       # Homepage/landing page
 │   ├── assets/                        # Images, icons, and static assets
@@ -87,18 +78,18 @@ brax-docs/
 │   ├── bounties/                      # Bug bounty program
 │   ├── events/                        # Community events
 │   └── blog/                          # Technical blog (with .authors.yml)
-├── mkdocs.yml                         # MkDocs configuration and nav structure
+├── zensical.toml                      # Zensical configuration and nav structure
 ├── requirements.txt                   # Python dependencies
 └── .github/workflows/ci.yml           # CI/CD pipeline for deployment
 ```
 
-### MkDocs Configuration
+### Zensical Configuration
 
-The `mkdocs.yml` file controls:
+The `zensical.toml` file controls:
 - **Navigation structure**: Hierarchical nav menu defined in the `nav` section
 - **Theme customization**: Material theme with dark/light mode, colors, fonts
 - **Markdown extensions**: Admonitions, code blocks, tabs, emoji, syntax highlighting
-- **Plugins**: Search, tags, git revision dates, lightbox images, HTML minification
+- **Plugins**: Search, tags, git revision dates, lightbox images
 - **Social links**: GitHub, LinkedIn, Twitter, community site
 
 ### Content Organization
@@ -132,7 +123,7 @@ The `.github/workflows/ci.yml` workflow:
 1. Triggers on push to `main` branch
 2. Sets up Python 3.12 environment
 3. Installs dependencies from `requirements.txt`
-4. Runs `mkdocs build --clean`
+4. Runs `zensical build --clean`
 5. Verifies `site/` directory exists
 6. Deploys via FTP to production server (uses secrets for credentials)
 
@@ -141,8 +132,8 @@ The `.github/workflows/ci.yml` workflow:
 ### Adding New Pages
 
 1. Create the Markdown file in the appropriate `docs/` subdirectory
-2. Add an entry to the `nav` section in `mkdocs.yml` (pages not in nav won't appear in menu)
-3. Test locally with `mkdocs serve`
+2. Add an entry to the `nav` section in `zensical.toml` (pages not in nav won't appear in menu)
+3. Test locally with `zensical serve -f zensical.toml`
 
 ### Content Standards
 
@@ -158,7 +149,7 @@ The `.devcontainer/` configuration provides:
 - **Python 3.12** with automatic venv setup
 - **Pre-installed extensions**: Markdown All in One, Markdown Lint, spell checker
 - **Auto-formatting**: Prettier for Markdown, Black for Python
-- **Port forwarding**: Port 8000 auto-forwarded for MkDocs server
+- **Port forwarding**: Port 8000 auto-forwarded for Zensical server
 - **Linting**: Markdown linting with MD013 (line length) and MD033 (HTML) disabled
 
 The devcontainer runs `./setup.sh` on creation and activates the venv in bash sessions.
@@ -169,5 +160,5 @@ The devcontainer runs `./setup.sh` on creation and activates the venv in bash se
 - **Never commit** virtual environments (`venv/`, `.venv/`)
 - The live site deploys automatically from `main` branch - test changes thoroughly
 - FTP deployment requires secrets: `FTP_USERNAME`, `FTP_PASSWORD` and vars: `FTP_HOST`, `FTP_PORT`
-- When editing `mkdocs.yml`, ensure YAML syntax is valid (use 2-space indentation)
+- When editing `zensical.toml`, ensure TOML syntax is valid
 - Markdown files use CRLF line endings (Windows-style) - preserve them for consistency
