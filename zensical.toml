@@ -1,0 +1,97 @@
+# Configuration for Zensical (https://zensical.org)
+# Zensical is a modern static site generator built by the creators of Material for MkDocs
+
+[project]
+site_name = "Lunr Documentation"
+site_url = "https://lunr-doc.example.com/"
+site_description = "Lunr Documentation Site"
+site_author = "Your Name"
+repo_url = "https://github.com/yourusername/lunr-doc"
+repo_name = "yourusername/lunr-doc"
+edit_uri = "edit/main/docs/"
+
+
+[directories]
+docs = "docs"
+site = "site"
+watch = ["docs"]
+
+
+[project.theme]
+name = "material"
+language = "en"
+features = [
+    "navigation.tabs",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.tracking",
+    "navigation.tabs.sticky",
+    "navigation.sections",
+    "navigation.footer",
+    "content.action.edit",
+    "content.action.view"
+]
+
+[[theme.palette]]
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+
+[[theme.palette]]
+scheme = "slate"
+primary = "indigo"
+accent = "indigo"
+
+[theme.font]
+text = "Roboto"
+code = "Roboto Mono"
+
+
+[nav]
+[nav."Home"]
+"Welcome" = "index.md"
+
+
+[markdown]
+extensions = [
+    "toc",
+    "admonition",
+    "footnotes",
+    "def_list",
+    "tables",
+    "attr_list",
+    "md_in_html",
+    "pymdownx.details",
+    "pymdownx.superfences",
+    "pymdownx.tabbed",
+    "pymdownx.emoji",
+    "pymdownx.highlight",
+    "pymdownx.inlinehilite",
+    "pymdownx.snippets",
+    "pymdownx.smartsymbols",
+    "pymdownx.caret",
+    "pymdownx.tilde",
+    "pymdownx.tasklist",
+    "pymdownx.mark",
+    "pymdownx.keys",
+]
+
+[markdown.extension_configs]
+toc = { permalink = true }
+"pymdownx.tabbed" = { alternate_style = true }
+"pymdownx.emoji" = { emoji_index = "material.extensions.emoji.twemoji", emoji_generator = "material.extensions.emoji.to_svg" }
+"pymdownx.tasklist" = { custom_checkbox = true }
+
+[plugins]
+search = {}
+typeset = {}
+
+[plugins.git-revision-date-localized]
+fallback_to_build_date = true
+
+[plugins.glightbox]
+
+
+[settings]
+use_directory_urls = false
