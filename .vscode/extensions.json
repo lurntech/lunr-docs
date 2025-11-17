@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+        // Dev Containers
+        "ms-vscode-remote.remote-containers",
+        // Formatting
+        "esbenp.prettier-vscode",
+        // Markdown support
+        "DavidAnson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "bierner.markdown-mermaid",
+        // Python support (for MkDocs)
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        // YAML support (for mkdocs.yml)
+        "redhat.vscode-yaml",
+        // Git
+        "eamodio.gitlens",
+        "bierner.markdown-preview-github-styles"
+    ],
+    "unwantedRecommendations": []
+}

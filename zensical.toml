@@ -1,21 +1,13 @@
-# Configuration for Zensical (https://zensical.org)
-# Zensical is a modern static site generator built by the creators of Material for MkDocs
-
 [project]
 site_name = "Lunr Documentation"
-site_url = "https://lunr-doc.example.com/"
+site_url = "https://docs.lunr.tech/"
 site_description = "Lunr Documentation Site"
-site_author = "Your Name"
-repo_url = "https://github.com/yourusername/lunr-doc"
-repo_name = "yourusername/lunr-doc"
+site_author = "Lunr Tech"
+repo_url = "https://github.com/lurntech/lunr-docs"
+repo_name = "lurntech/lunr-docs"
 edit_uri = "edit/main/docs/"
-
-
-[directories]
-docs = "docs"
-site = "site"
-watch = ["docs"]
-
+docs_dir = "docs"
+site_dir = "site"
 
 [project.theme]
 name = "material"
@@ -47,11 +39,9 @@ accent = "indigo"
 text = "Roboto"
 code = "Roboto Mono"
 
-
 [nav]
 [nav."Home"]
 "Welcome" = "index.md"
-
 
 [markdown]
 extensions = [
@@ -91,7 +81,6 @@ typeset = {}
 fallback_to_build_date = true
 
 [plugins.glightbox]
-
 
 [settings]
 use_directory_urls = false
